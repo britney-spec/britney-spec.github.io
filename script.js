@@ -28,7 +28,7 @@ const translations = {
     connectQuote: "「看清生活的本質，仍然選擇熱愛生活」",
     emailLabel: "Email",
     basedLabel: "Based in",
-    footer: "「在日復一日的日常拉扯中，我們都比自己想像的還要脆弱與堅強。」"
+    footer: "「在日復一日的生活裡，我們都比自己以為的更脆弱，也比想像中更堅強。」"
   },
   en: {
     metaTitle: "Britney Lin | Personal Brand Website",
@@ -59,7 +59,7 @@ const translations = {
     connectQuote: "To see life clearly, and still choose to love it.",
     emailLabel: "Email",
     basedLabel: "Based in",
-    footer: "「在日復一日的日常拉扯中，我們都比自己想像的還要脆弱與堅強。」"
+    footer: "「在日復一日的生活裡，我們都比自己以為的更脆弱，也比想像中更堅強。」"
   }
 };
 
