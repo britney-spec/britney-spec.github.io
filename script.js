@@ -9,7 +9,7 @@ const translations = {
     heroTagTwo: "雙語教育",
     heroTagThree: "AI 教育應用",
     aboutTitle: "About",
-    aboutIntro: "我是 Britney。",
+    aboutIntro: "Hi，我是我是Britney ♡",
     aboutP1: "我相信學習不只是知識的累積，更是理解世界、理解自己，並與他人建立連結的過程。",
     aboutP2: "透過教育、語言與數位工具，我持續探索科技如何創造更有溫度的學習體驗，讓知識的傳遞回到人與人的理解與回饋。",
     aboutP3: "我重視深度交流與長期關係的建立，也關心生命是否被真實而有意義地活出。在資訊過載的時代裡，我希望為學習者保留清晰的方向感，並傳遞溫柔而堅定的力量。",
