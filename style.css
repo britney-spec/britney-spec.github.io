@@ -549,13 +549,11 @@ body.dark .connect-inner {
 }
 
 .connect-inner {
-  padding: clamp(30px, 6vw, 72px);
-  border: 1px solid rgba(47, 65, 86, .12);
-  border-radius: var(--radius);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, .74), rgba(232, 216, 211, .5)),
-    var(--surface);
-  box-shadow: var(--shadow);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .connect-inner h2 {
@@ -597,19 +595,22 @@ body.dark .connect-inner {
 
 .contact-list {
   display: grid;
-  gap: 18px;
+  gap: 16px;
   margin: clamp(18px, 3vw, 28px) 0 0;
   font-style: normal;
+  max-width: 780px;
 }
 
 .contact-list p {
   display: grid;
-  grid-template-columns: 110px minmax(0, 1fr);
+  grid-template-columns: 120px minmax(0, 1fr);
   gap: 18px;
   align-items: baseline;
   margin: 0;
   color: var(--text);
   line-height: 1.65;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--line);
 }
 
 .contact-list span {
@@ -1049,6 +1050,27 @@ body::before {
   .contact-list strong {
     font-size: 18px;
   }
+}
+
+.connect-section {
+  border-top: 1px solid var(--line);
+  padding: clamp(42px, 6vw, 74px) 0;
+}
+
+.connect-inner {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.dark .connect-inner {
+  background: transparent;
+}
+
+.connect-inner .contact-list {
+  margin-top: 0;
 }
 
 .section-label {
