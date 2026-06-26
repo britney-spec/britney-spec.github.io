@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="metaTitle">Britney | 個人品牌網站</title>
+  <meta name="description" content="Britney 的個人品牌網站，聚焦教育、語言、數位工具與人本學習體驗。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#about" aria-label="Home">
+      <span class="brand-dot"></span>
+      <span data-i18n="brand">Britney</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#work" data-i18n="navWork">Work & Explorations</a>
+      <a href="#connect" data-i18n="navConnect">Connect</a>
+    </nav>
+    <div class="header-actions">
+      <button class="toggle-btn" id="langToggle" type="button" aria-label="Switch language">EN</button>
+      <button class="toggle-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" id="about">
+      <div class="hero-profile reveal" aria-label="Personal introduction">
+        <p class="hero-quote" data-i18n="connectQuote">「看清生活的本質，仍然選擇熱愛生活」</p>
+        <div class="portrait-frame">
+          <img src="assets/profile.jpg" alt="Personal portrait">
+        </div>
+        <h1>Britney Lin</h1>
+        <div class="hero-tags" aria-label="Personal tags">
+          <span data-i18n="heroTagOne">Learning Experience Designer</span>
+          <span data-i18n="heroTagTwo">Bilingual Education</span>
+          <span data-i18n="heroTagThree">AI for Education</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-detail" aria-labelledby="about-title">
+      <div class="section-label reveal">
+        <span>01 /</span>
+        <h2 id="about-title" data-i18n="aboutTitle">About</h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-copy reveal">
+          <p class="intro-line" data-i18n="aboutIntro">我是 Britney。</p>
+          <p data-i18n="aboutP1">我相信學習不只是知識的累積，更是理解世界、理解自己，並與他人建立連結的過程。</p>
+          <p data-i18n="aboutP2">透過教育、語言與數位工具，我持續探索科技如何創造更有溫度的學習體驗，讓知識的傳遞回到人與人的理解與回饋。</p>
+          <p data-i18n="aboutP3">我重視深度交流與長期關係的建立，也關心生命是否被真實而有意義地活出。在資訊過載的時代裡，我希望為學習者保留清晰的方向感，不致迷失。並透過創作與分享，形成穩定而持續的正向循環，傳遞溫柔而堅定的力量。</p>
+        </div>
+        <div class="floating-keywords reveal" aria-label="Personal keywords">
+          <span class="float-one">Articulacy</span>
+          <span class="float-two">Sincerity &amp; Empathy</span>
+          <span class="float-three">Resonance</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="section-label reveal">
+        <span>02 /</span>
+        <h2 id="work-title" data-i18n="workTitle">Work & Explorations</h2>
+      </div>
+
+      <div class="work-board">
+        <section class="work-column reveal selected-panel" aria-labelledby="selected-title">
+          <h3 id="selected-title" data-i18n="selectedHeading">Selected Works</h3>
+          <div class="interactive-list">
+            <article class="info-card">
+              <span class="project-number">Project 01</span>
+              <h4>International Learning &amp; Cross-Cultural Exchange Program</h4>
+              <button class="learn-more" type="button" aria-expanded="false" data-i18n="learnMore">Learn More</button>
+              <p class="card-detail" data-i18n="projectOneDetail">設計跨文化學習與語言實作活動，透過沉浸式體驗提升溝通力與國際理解。</p>
+            </article>
+            <article class="info-card">
+              <span class="project-number">Project 02</span>
+              <h4>Bilingual Education &amp; EMI Learning Design</h4>
+              <button class="learn-more" type="button" aria-expanded="false" data-i18n="learnMore">Learn More</button>
+              <p class="card-detail" data-i18n="projectTwoDetail">投入雙語學習情境的規劃與優化，關注「如何讓學習被理解」而不只是被傳遞。</p>
+            </article>
+            <article class="info-card">
+              <span class="project-number">Project 03</span>
+              <h4>Academic Quality Enhancement &amp; Learning Innovation Systems</h4>
+              <button class="learn-more" type="button" aria-expanded="false" data-i18n="learnMore">Learn More</button>
+              <p class="card-detail" data-i18n="projectThreeDetail">參與教育學習品質提升，關注教學如何持續優化與形成更有系統的學習支持。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="work-column reveal exploring-panel" aria-labelledby="exploring-title">
+          <h3 id="exploring-title" data-i18n="exploringHeading">Currently Exploring</h3>
+          <div class="interactive-list">
+            <article class="info-card soft-card">
+              <span class="project-number">Theme 01</span>
+              <h4>AI × Digital Education</h4>
+              <button class="learn-more" type="button" aria-expanded="false" data-i18n="learnMore">Learn More</button>
+              <p class="card-detail" data-i18n="exploreOneDetail">探索 AI 如何融入教育設計與數位學習體驗，重構教學與學習的互動方式。</p>
+            </article>
+            <article class="info-card soft-card">
+              <span class="project-number">Theme 02</span>
+              <h4>Bilingual UI/UX System Design</h4>
+              <button class="learn-more" type="button" aria-expanded="false" data-i18n="learnMore">Learn More</button>
+              <p class="card-detail" data-i18n="exploreTwoDetail">雙語情境下的 UI/UX 系統設計，關注資訊架構、使用者體驗與語言轉換中的理解效率。</p>
+            </article>
+            <article class="info-card soft-card">
+              <span class="project-number">Theme 03</span>
+              <h4>Cinematic Video Storytelling</h4>
+              <button class="learn-more" type="button" aria-expanded="false" data-i18n="learnMore">Learn More</button>
+              <p class="card-detail" data-i18n="exploreThreeDetail">以影像敘事建立節奏與情感，發展具質感與敘事性的視覺表達。</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="connect-section" id="connect" aria-labelledby="connect-title">
+      <div class="connect-inner reveal">
+        <p class="kicker" data-i18n="connectKicker">03 / Let's Connect</p>
+
+        <address class="contact-list" aria-label="Contact information">
+          <p>
+            <span data-i18n="emailLabel">Email</span>
+            <a href="mailto:britney880414@gmail.com">britney880414@gmail.com</a>
+          </p>
+          <p>
+            <span data-i18n="basedLabel">Based in</span>
+            <strong>Taipei, Taiwan</strong>
+          </p>
+          <p>
+            <span>Instagram</span>
+            <a class="ig-link" href="https://www.instagram.com/_________britney_________?igsh=MThvZ2k0ZmYyNTdwMA%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">@britney</a>
+          </p>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer">「在日復一日的日常拉扯中，我們都比自己想像的還要脆弱與堅強。」</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
