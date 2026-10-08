@@ -70,10 +70,10 @@
   .center .kicker{justify-content:center;}
   .glass{padding:24px 20px;border-radius:22px;border:1px solid transparent;
     background:
-      linear-gradient(160deg, rgba(255,249,245,.80), rgba(250,232,226,.62)) padding-box,
+      linear-gradient(165deg, rgba(255,252,250,.90), rgba(254,245,241,.84)) padding-box,
       var(--rg-soft) border-box;
     -webkit-backdrop-filter:blur(12px) saturate(115%);backdrop-filter:blur(12px) saturate(115%);
-    box-shadow:0 18px 50px rgba(120,70,76,.16), inset 0 1px 0 rgba(255,255,255,.7);}
+    box-shadow:0 16px 44px rgba(120,70,76,.12), inset 0 1px 0 rgba(255,255,255,.8);}
 
   /* 神性光輝 */
   .glory{position:relative;display:flex;justify-content:center;}
@@ -93,11 +93,12 @@
   section.on .in > *:nth-child(3){transition-delay:.5s}
   section.on .in > *:nth-child(4){transition-delay:.75s}
   section.on .in > *:nth-child(5){transition-delay:1s}
+  section.on .in > *:nth-child(6){transition-delay:1.25s}
 
   /* 卡片按鈕 */
   .picks{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
   .pick{position:relative;overflow:hidden;width:100%;padding:16px 18px;border-radius:999px;border:1px solid transparent;
-    background:linear-gradient(180deg, rgba(255,251,248,.86), rgba(250,236,230,.80)) padding-box, var(--rg-soft) border-box;
+    background:linear-gradient(180deg, rgba(255,253,251,.92), rgba(254,245,241,.88)) padding-box, var(--rg-soft) border-box;
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
     box-shadow:0 8px 22px rgba(110,60,70,.16), inset 0 1px 0 rgba(255,255,255,.8);
     font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.5em;text-indent:.5em;color:#5A2F3A;cursor:pointer;
@@ -109,7 +110,7 @@
   .pick:nth-child(4)::after{animation-delay:1.5s}.pick:nth-child(5)::after{animation-delay:2s}
   @keyframes sheen{0%,60%{left:-40%}100%{left:130%}}
   .pick:active{transform:scale(.97);}
-  .pick.seen{background:linear-gradient(180deg, rgba(246,224,218,.92), rgba(236,204,198,.88)) padding-box, var(--rg) border-box;}
+  .pick.seen{background:linear-gradient(180deg, rgba(252,238,234,.94), rgba(248,228,222,.9)) padding-box, var(--rg) border-box;}
 
   /* 展開層：滿版 */
   .veil{position:fixed;inset:0;z-index:20;opacity:0;pointer-events:none;transition:opacity .5s ease;
@@ -138,6 +139,24 @@
   .heart svg{width:24px;height:24px;overflow:visible;}
   .heart .lbl{font-family:var(--en);font-style:italic;font-size:13px;letter-spacing:.14em;color:var(--rose);}
   .heart:active .ring{transform:scale(.93);background:linear-gradient(rgba(240,206,200,.7),rgba(240,206,200,.7)) padding-box, var(--rg) border-box;}
+
+  /* 尾聲 */
+  .finale{padding:34px 22px 30px;}
+  .done{display:block;width:52px;height:52px;margin:0 auto 20px;}
+  .done .c{stroke-dasharray:183;stroke-dashoffset:183;transform:rotate(-90deg);transform-origin:32px 32px;}
+  .done .k{stroke-dasharray:40;stroke-dashoffset:40;}
+  .finale > *{opacity:0;transform:translateY(10px);transition:opacity 1s ease, transform 1s ease;}
+  section.on .finale > *{opacity:1;transform:none;}
+  section.on .finale > *:nth-child(2){transition-delay:.9s}
+  section.on .finale > *:nth-child(3){transition-delay:2.2s}
+  section.on .finale > *:nth-child(4){transition-delay:2.5s}
+  section.on .finale > *:nth-child(5){transition-delay:2.9s}
+  section.on .finale > *:nth-child(6){transition-delay:3.3s}
+  section.on .done .c{animation:draw 1.4s cubic-bezier(.6,.1,.3,1) .3s forwards;}
+  section.on .done .k{animation:draw .7s ease-out 1.6s forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .signoff{margin-top:30px;font-family:var(--en);font-size:11px;letter-spacing:.5em;text-indent:.5em;color:var(--rose);}
+  .signoff::before{content:"";display:block;width:36px;height:1px;margin:0 auto 16px;background:var(--rg);}
 
   /* 品牌 */
   .brand{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top) + 18px);z-index:4;text-align:center;pointer-events:none;
@@ -298,11 +317,20 @@
     </div>
   </section>
 
-  <section data-i="14">
+  <section data-i="14" class="tall">
     <div class="inner in center">
+      <div class="glass finale">
+      <svg class="done" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C98A86"/><stop offset=".5" stop-color="#A8646F"/><stop offset="1" stop-color="#6E3443"/></linearGradient></defs>
+        <circle cx="32" cy="32" r="29" fill="none" stroke="url(#dg)" stroke-width="1.3" class="c"/>
+        <path d="M20.5 33.5l7.5 7.5 15.5-17" fill="none" stroke="url(#dg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="k"/>
+      </svg>
+      <p class="kicker">尾聲<span class="en">Amen</span></p>
       <p class="lead solo">你不是一個人。</p>
       <p class="big-en" style="margin-top:8px">You are not alone.</p>
       <p class="body" style="margin-top:28px">天下萬物都是祂的——<br>包括你此刻放不下的那件事。<br>祂都知道，也都看顧。</p>
+      <p class="signoff">RHEMA · JOB 42</p>
+      </div>
     </div>
   </section>
 
@@ -436,9 +464,14 @@
     var b=e.target.closest('.pick'); if(b) open(b.dataset.k,b);
   });
   document.getElementById('close').addEventListener('click',function(){
-    close();
     var next=secs[5];
-    setTimeout(function(){ deck.scrollTo({top:next.offsetTop,behavior:'smooth'}); },380);
+    deck.classList.remove('locked');
+    deck.style.scrollSnapType='none';
+    deck.scrollTop=next.offsetTop;
+    requestAnimationFrame(function(){
+      deck.style.scrollSnapType='';
+      veil.classList.remove('open');
+    });
   });
   veil.addEventListener('click',function(e){ if(e.target===veil) close(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
