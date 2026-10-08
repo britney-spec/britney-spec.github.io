@@ -6,7 +6,7 @@
 <title>RHEMA｜我從前風聞有你</title>
 <meta name="description" content="約伯記 41–42 章的默想與禱告" />
 <meta property="og:title" content="RHEMA｜我從前風聞有你，現在親眼看見你" />
-<meta property="og:image" content="sea.jpg" />
+<meta property="og:image" content="first.jpg" />
 <meta name="theme-color" content="#F3DDD6" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,8 +25,12 @@
   html,body{height:100%;overflow:hidden;background:#EFE2DC;color:var(--ink);font-family:var(--serif);}
 
   /* 背景：海 */
-  .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:#EFE2DC url(sea.jpg) center/cover no-repeat;}
+  .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:#EFE2DC url(first.jpg) center/cover no-repeat;}
   .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .bg .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 60%;
+    animation:slowgrow 90s linear forwards;transition:opacity 2s ease;}
+  .bg .still.gone{opacity:0;}
+  @keyframes slowgrow{from{transform:scale(1)}to{transform:scale(1.14)}}
   .bg::after{content:"";position:absolute;inset:0;
     background:
       radial-gradient(120% 55% at 50% 0%, rgba(255,236,226,.62), transparent 70%),
@@ -102,8 +106,8 @@
   /* 卡片按鈕 */
   .picks{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
   .pick{position:relative;overflow:hidden;width:100%;padding:16px 18px;border-radius:999px;border:1.2px solid transparent;
-    background:linear-gradient(180deg, #FFFCFA 0%, #FDF0EA 55%, #F8E2DA 100%) padding-box, var(--rg) border-box;
-    box-shadow:0 10px 28px rgba(120,60,70,.22), 0 0 22px rgba(255,236,228,.55), inset 0 1px 0 #fff, inset 0 -6px 14px rgba(232,180,172,.25);
+    background:linear-gradient(180deg, #FFFFFF 0%, #FFFBF9 50%, #FFF1EC 100%) padding-box, linear-gradient(135deg,#E9B8B0,#FFF4EE 45%,#D9A09E) border-box;
+    box-shadow:0 0 0 1px rgba(255,255,255,.6), 0 0 26px rgba(255,255,255,.85), 0 8px 24px rgba(150,90,96,.16), inset 0 1px 0 #fff, inset 0 -4px 10px rgba(240,200,192,.18);
     font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.5em;text-indent:.5em;color:#5A2F3A;cursor:pointer;
     transition:transform .3s, box-shadow .3s;}
   .pick::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:30%;
@@ -173,7 +177,8 @@
 <body>
 
 <div class="bg" aria-hidden="true">
-  <video id="sea" src="sea3.mp4" poster="sea.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <video id="sea" src="sea3.mp4" poster="first.jpg" muted loop playsinline preload="auto"></video>
+  <img id="still" class="still" src="first.jpg" alt="">
 </div>
 
 <nav class="rail" id="rail" aria-hidden="true"></nav>
@@ -406,6 +411,7 @@
       cur=i;
       dots.forEach(function(d,k){d.classList.toggle('on',k===i);});
       if(i>0) document.getElementById('hint').style.opacity=0;
+      if(i>=6 && window.__startSea) window.__startSea();
       if(i+1>S.max){ S.max=i+1; if(S.max===N) S.done=true; send(); }
     });
   },{root:deck,threshold:.6});
@@ -438,10 +444,16 @@
   veil.addEventListener('click',function(e){ if(e.target===veil) close(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
 
-  /* 部分瀏覽器（如省電模式）不自動播放，點一下畫面就開始 */
-  var v=document.getElementById('sea');
-  function kick(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
-  kick(); document.addEventListener('touchstart',kick,{once:true,passive:true});
+  /* 前六屏是靜態畫面緩慢放大；到經文那一屏才開始播放海的影片 */
+  var v=document.getElementById('sea'), still=document.getElementById('still'), started=false;
+  try{ v.pause(); }catch(e){}
+  window.__startSea=function(){
+    if(started) return; started=true;
+    try{ v.currentTime=0; }catch(e){}
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    setTimeout(function(){ still.classList.add('gone'); },150);
+  };
+  document.addEventListener('touchstart',function(){ if(started){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } },{passive:true});
 
   send(true);
 })();
